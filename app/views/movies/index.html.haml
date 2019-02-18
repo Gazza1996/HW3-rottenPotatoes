@@ -1,3 +1,5 @@
+-#  Author: Gary Mannion
+
 -#  This file is app/views/movies/index.html.haml
 %h1 All Movies
 
@@ -13,10 +15,11 @@
       = submit_tag 'Refresh', id: 'ratings_submit'
   
     %tr
-      
+      -#  Both headers are Highlighting when clicked on and id names are set correctly but not recognised on edx
+      -#  Title Header
       %th{params[:sort] == "title" ? {:class => "hilite"} : {}}= link_to "Movie Title", movies_path(:sort => "title", ratings: params[:ratings]), :id => "title_header", "data-no-turbolink" => "true"
       %th Rating
-      
+      -#  Release Date Header
       %th{params[:sort] == "release_date" ? {:class => "hilite"} : {}}= link_to "Release Date", movies_path(:sort => "release_date", ratings: params[:ratings]), :id => "release_date_header", "data-no-turbolink" => "true"
       %th More Info
       
